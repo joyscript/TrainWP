@@ -1,0 +1,50 @@
+@mixin font($size, $height: $size, $weight: bold, $color: $color-title) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin flex($width) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  > * {
+    flex-basis: calc($width / $content-width * 100%);
+  }
+}
+
+@mixin fbasis($card-width, $container-width: $content-width) {
+  flex-basis: calc(($card-width / $container-width) * 100%);
+}
+
+@mixin media-lap {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-tab {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-mob {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin media-mm {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
